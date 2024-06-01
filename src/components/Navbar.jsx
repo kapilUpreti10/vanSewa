@@ -1,66 +1,118 @@
-import React,{useState} from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { IoMdMenu } from "react-icons/io";
 
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-    const handleSideBar = () => {
-        setIsOpen(!isOpen);
-    }
+  const handleSideBar = () => {
+    setIsOpen(!isOpen);
+  };
+  const activeStyle = {
+    color: "red",
+    fontWeight: "bold",
+    textDecoration: "underline",
+  };
 
-    return (
-        <nav className="bg-blue-900 shadow-lg sticky top-0 z-10 relative">
-            <div className="container mx-auto px-6 py-4">
-                <div className="flex items-center justify-between">
-                    <div className="flex items-center">
-                        <Link to="/" className="text-white">
-                            <span className='text-white text-xl font-semibold ml-2'>Vans Life</span>
-                        </Link>
-                    </div>
-                    <div className="hidden md:flex">
-                        <ul className="flex items-center">
-                            <li>
-                                <Link to="/" className="text-gray-300 hover:text-white px-4 py-2">Home</Link>
-                            </li>
-                            <li>
-                                <Link to="/dashboard" className="text-gray-300 hover:text-white px-4 py-2">Dashboard</Link>
-                            </li>
-                            <li>
-                                <Link to="/about" className="text-gray-300 hover:text-white px-4 py-2">About</Link>
-                            </li>
-                            <li>
-                                <Link to="/vans" className="text-gray-300 hover:text-white px-4 py-2">Vans</Link>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="md:hidden">
-                        <button className="text-white focus:outline-none" onClick={handleSideBar}>
-                            <IoMdMenu size={24} />
-                        </button>
-                     
-                    </div>
-                </div>
-                </div>
-                <div className={`${isOpen ? 'block' : 'hidden'} md:hidden`}>
-                    <ul className="flex flex-col items-center">
-                        <li>
-                            <Link to="/" className="text-gray-300 hover:text-white px-4 py-4">Home</Link>
-                        </li>
-                        <li>
-                            <Link to="/dashboard" className="text-gray-300 hover:text-white px-4 py-4">Dashboard</Link>
-                        </li>
-                        <li>
-                            <Link to="/about" className="text-gray-300 hover:text-white px-4 py-4">About</Link>
-                        </li>
-                        <li>
-                            <Link to="/vans" className="text-gray-300 hover:text-white px-4 py-4">Vans</Link>
-                        </li>
-                    </ul>
-                </div>
-            
-        </nav>
-    );
+  return (
+    <nav className="bg-blue-900 shadow-lg sticky top-0 z-10 h-18">
+      <div className="container mx-auto px-6 py-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center">
+            <NavLink to="/" className="text-white">
+              <span className="text-white text-xl font-semibold ml-2">
+                Vans Life
+              </span>
+            </NavLink>
+          </div>
+          <div className="hidden md:flex">
+            <ul className="flex items-center">
+              <li>
+                <NavLink
+                  to="/"
+                  style={({ isActive }) => (isActive ? activeStyle : null)}
+                  end
+                  className="text-gray-300 hover:text-white px-4 py-2"
+                >
+                  Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/dashboard"
+                  style={({ isActive }) => (isActive ? activeStyle : null)}
+                  className="text-gray-300 hover:text-white px-4 py-2"
+                >
+                  Dashboard
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/about"
+                  style={({ isActive }) => (isActive ? activeStyle : null)}
+                  className="text-gray-300 hover:text-white px-4 py-2"
+                >
+                  About
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/vans"
+                  className="text-gray-300 hover:text-white px-4 py-2"
+                >
+                  Vans
+                </NavLink>
+              </li>
+            </ul>
+          </div>
+          <div className="md:hidden">
+            <button
+              className="text-white focus:outline-none"
+              onClick={handleSideBar}
+            >
+              <IoMdMenu size={24} />
+            </button>
+          </div>
+        </div>
+      </div>
+      <div className={`${isOpen ? "block" : "hidden"} md:hidden`}>
+        <ul className="flex flex-col items-center">
+          <li>
+            <NavLink
+              to="/"
+              className="text-gray-300 hover:text-white px-4 py-4"
+            >
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/dashboard"
+              className="text-gray-300 hover:text-white px-4 py-4"
+            >
+              Dashboard
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/about"
+              className="text-gray-300 hover:text-white px-4 py-4"
+            >
+              About
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/vans"
+              className="text-gray-300 hover:text-white px-4 py-4"
+            >
+              Vans
+            </NavLink>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;
