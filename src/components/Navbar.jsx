@@ -10,7 +10,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="bg-blue-900 shadow-lg sticky top-0 z-10">
+        <nav className="bg-blue-900 shadow-lg sticky top-0 z-10 relative">
             <div className="container mx-auto px-6 py-4">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center">
@@ -24,12 +24,14 @@ const Navbar = () => {
                                 <Link to="/" className="text-gray-300 hover:text-white px-4 py-2">Home</Link>
                             </li>
                             <li>
+                                <Link to="/dashboard" className="text-gray-300 hover:text-white px-4 py-2">Dashboard</Link>
+                            </li>
+                            <li>
                                 <Link to="/about" className="text-gray-300 hover:text-white px-4 py-2">About</Link>
                             </li>
                             <li>
                                 <Link to="/vans" className="text-gray-300 hover:text-white px-4 py-2">Vans</Link>
                             </li>
-                            {/* Add more navigation links as needed */}
                         </ul>
                     </div>
                     <div className="md:hidden">
@@ -43,15 +45,17 @@ const Navbar = () => {
                 <div className={`${isOpen ? 'block' : 'hidden'} md:hidden`}>
                     <ul className="flex flex-col items-center">
                         <li>
-                            <Link to="/" className="text-gray-300 hover:text-white px-4 py-2">Home</Link>
+                            <Link to="/" className="text-gray-300 hover:text-white px-4 py-4">Home</Link>
                         </li>
                         <li>
-                            <Link to="/about" className="text-gray-300 hover:text-white px-4 py-2">About</Link>
+                            <Link to="/dashboard" className="text-gray-300 hover:text-white px-4 py-4">Dashboard</Link>
                         </li>
                         <li>
-                            <Link to="/vans" className="text-gray-300 hover:text-white px-4 py-2">Vans</Link>
+                            <Link to="/about" className="text-gray-300 hover:text-white px-4 py-4">About</Link>
                         </li>
-                        {/* Add more navigation links as needed */}
+                        <li>
+                            <Link to="/vans" className="text-gray-300 hover:text-white px-4 py-4">Vans</Link>
+                        </li>
                     </ul>
                 </div>
             

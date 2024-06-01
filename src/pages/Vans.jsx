@@ -31,7 +31,7 @@ const Vans = () => {
               <img src={van.imageUrl} alt={van.name} className="w-full object-cover mb-4"/>
               <h2 className="text-xl font-semibold mb-2">{van.name}</h2>
               <p className="text-gray-700 mb-2">${van.price}</p>
-              <Link to={`/vans/${van.id}`}>
+              <Link to={`/vans/details/${van.id}`}>
               <button className="bg-blue-500 text-white px-4 py-2 rounded-md">View Details</button>
               </Link>
             </div>
