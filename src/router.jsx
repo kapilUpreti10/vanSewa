@@ -12,8 +12,10 @@ import DashboardLayout from "./Layouts/DashboardLayout";
 import DashHome from "./pages/Dashboard/DashHome";
 import DashIncome from "./pages/Dashboard/DashIncome";
 import DashReviews from "./pages/Dashboard/DashReview";
-import DashVans from "./pages/Dashboard/DashVans";
 import DashVanDetail from "./pages/Dashboard/DashVanDetail";
+import DashVanLayout from "./Layouts/DashVanLayout";
+import DashVanProfile from "./pages/Dashboard/DashVanProfile";
+import DashVanPricing from "./pages/Dashboard/DashVanPricing";
 
 const Router = createBrowserRouter([
   {
@@ -43,12 +45,22 @@ const Router = createBrowserRouter([
             element: <DashReviews />,
           },
           {
-            path: "vans",
-            element: <DashVans />,
-          },
-          {
             path: "vans/:id",
-            element: <DashVanDetail />,
+            element: <DashVanLayout />,
+            children: [
+              {
+                path: "",
+                element: <DashVanDetail />,
+              },
+              {
+                path: "pricing",
+                element: <DashVanPricing />,
+              },
+              {
+                path: "photo",
+                element: <DashVanProfile />,
+              },
+            ],
           },
         ],
       },
