@@ -25,13 +25,13 @@ const DashboardLayout = () => {
             >
               <li>Income</li>
             </NavLink>
-            <NavLink
+            {/* <NavLink
               to="/dashboard/vans"
               style={({ isActive }) => (isActive ? activeStyle : null)}
               className="hover:text-blue-300"
             >
               <li>Vans</li>
-            </NavLink>
+            </NavLink> */}
             <NavLink
               to="/dashboard/review"
               style={({ isActive }) => (isActive ? activeStyle : null)}

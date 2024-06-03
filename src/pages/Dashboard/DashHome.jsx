@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const DashHome = () => {
   const [vans, setVans] = useState([]);
@@ -29,14 +29,14 @@ const DashHome = () => {
             className="flex flex-col bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300 "
           >
             <div className="flex flex-col sm:flex-row gap-10">
-              <div className="w-1/3 ">
+              <div className="md:w-1/3 ">
                 <img
                   src={van.imageUrl}
                   alt="image Loading.."
-                  className="rounded-md"
+                  className="rounded-md w-full"
                 />
               </div>
-              <div className="flex flex-col gap-5 w-2/3">
+              <div className="flex flex-col gap-2 md:w-2/3">
                 <p className="text-xl font-bold mb-2">{van.name}</p>
                 <span className="w-[80px] mb-2 bg-green-500 text-white px-4 py-2 rounded-md ">
                   {van.type}
@@ -45,11 +45,11 @@ const DashHome = () => {
               </div>
             </div>
             <div className="mt-5">
-              <Link to={`/dashboard/vans/${van.id}`}>
+              <NavLink to={`/dashboard/vans/${van.id}`}>
                 <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors duration-300">
                   View details
                 </button>
-              </Link>
+              </NavLink>
             </div>
           </div>
         ))}
