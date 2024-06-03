@@ -14,7 +14,7 @@ import DashVanDetail from "./pages/Dashboard/DashVanDetail";
 import DashVanLayout from "./Layouts/DashVanLayout";
 import DashVanProfile from "./pages/Dashboard/DashVanProfile";
 import DashVanPricing from "./pages/Dashboard/DashVanPricing";
-import DashboardLayout from "./Layouts/DashboardLayout";
+import DashLayout from "./Layouts/DashLayout";
 
 const Router = createBrowserRouter([
   {
@@ -28,7 +28,7 @@ const Router = createBrowserRouter([
       },
       {
         path: "/dashboard",
-        element: <DashboardLayout />,
+        element: <DashLayout />,
         children: [
           {
             path: "",
