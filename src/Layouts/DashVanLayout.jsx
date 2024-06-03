@@ -79,7 +79,7 @@ const DashVanLayout = () => {
             </ul>
           </div>
           <div className="bg-white p-6 rounded-lg ">
-            <Outlet />
+            <Outlet context={{ van }} />
           </div>
         </div>
       </div>

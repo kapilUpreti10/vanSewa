@@ -1,25 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import axios from "axios";
+import React from "react";
+import { useOutletContext } from "react-router-dom";
 
 const DashVanPricing = () => {
-  const { id } = useParams();
-  const [van, setVan] = useState({});
-
-  const fetchVans = async () => {
-    try {
-      const response = await axios.get(`/api/api/vans/details/${id}`);
-      if (response.data.status === "success") {
-        setVan(response.data.data.van);
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  useEffect(() => {
-    fetchVans();
-  }, [id]);
+  const { van } = useOutletContext();
 
   return (
     <div className="p-6 bg-gray-100 flex justify-center items-center">

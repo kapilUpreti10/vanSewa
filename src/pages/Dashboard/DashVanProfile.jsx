@@ -1,26 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import axios from "axios";
+import { useParams, useOutletContext } from "react-router-dom";
 
 const DashVanProfile = () => {
-  const { id } = useParams();
-  const [van, setVan] = useState({});
-
-  const fetchVans = async () => {
-    try {
-      const response = await axios.get(`/api/api/vans/details/${id}`);
-      if (response.data.status === "success") {
-        setVan(response.data.data.van);
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  useEffect(() => {
-    fetchVans();
-  }, [id]);
-
+  const { van } = useOutletContext();
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = van.imageUrl;
