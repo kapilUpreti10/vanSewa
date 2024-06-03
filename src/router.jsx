@@ -7,8 +7,6 @@ import Vans from "./pages/vans/Vans";
 import AboutLayout from "./Layouts/AboutLayout";
 import MainLayout from "./Layouts/MainLayout";
 import DetailPage from "./pages/vans/VanDetails";
-import Error from "./components/Error";
-import DashboardLayout from "./Layouts/DashboardLayout";
 import DashHome from "./pages/Dashboard/DashHome";
 import DashIncome from "./pages/Dashboard/DashIncome";
 import DashReviews from "./pages/Dashboard/DashReview";
@@ -16,6 +14,7 @@ import DashVanDetail from "./pages/Dashboard/DashVanDetail";
 import DashVanLayout from "./Layouts/DashVanLayout";
 import DashVanProfile from "./pages/Dashboard/DashVanProfile";
 import DashVanPricing from "./pages/Dashboard/DashVanPricing";
+import DashboardLayout from "./Layouts/DashboardLayout";
 
 const Router = createBrowserRouter([
   {

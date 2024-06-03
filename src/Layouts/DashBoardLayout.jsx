@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 
-const DashboardLayout = () => {
+const DashLayout = () => {
   const activeStyle = {
     color: "blue",
     fontWeight: "bold",
@@ -49,4 +49,4 @@ const DashboardLayout = () => {
   );
 };
 
-export default DashboardLayout;
+export default DashLayout;
