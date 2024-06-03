@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Error from "../../components/Error";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
+import { FaSearch } from "react-icons/fa";
 
 const Vans = () => {
   const [vans, setVans] = useState([]);
+  const [search, setSearch] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const typeFilter = searchParams.get("type")?.toLowerCase() || "";
 
   useEffect(() => {
     const fetchVans = async () => {
@@ -20,13 +24,52 @@ const Vans = () => {
     fetchVans();
   }, []);
 
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+  };
+  const setQueryParam = (e) => {
+    if (e.key === "Enter") {
+      setSearchParams(`?type=${search}`);
+      setTimeout(() => {
+        setSearch("");
+      }, 500);
+    }
+  };
+  console.log(search);
+  console.log(searchParams.get("type"));
+
+  const vanToDisplay = typeFilter
+    ? vans.filter((van) => van.type.toLowerCase() === typeFilter)
+    : vans;
+
   return (
     <div className="container mx-auto px-4">
-      {vans.length === 0 ? (
+      <div className="flex justify-center my-10">
+        <div className="relative w-full sm:w-1/3">
+          <input
+            type="text"
+            placeholder="Search van type here"
+            value={search}
+            onChange={handleSearch}
+            onKeyDown={setQueryParam}
+            className="w-full p-2 border rounded-md"
+          />
+          <FaSearch className="absolute right-3 top-3 text-gray-400" />
+        </div>
+      </div>
+      {typeFilter && (
+        <div className="flex items-center justify-center py-5">
+          <Link className="hover:underline" to=".">
+            {/* . bring to current url  */}
+            Back to all vans
+          </Link>
+        </div>
+      )}
+      {vanToDisplay.length === 0 ? (
         <Error statusCode={`404`} message={`No data to display`} />
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {vans.map((van) => (
+          {vanToDisplay.map((van) => (
             <div key={van.id} className="border rounded-lg p-4 shadow-md">
               <img
                 src={van.imageUrl}

@@ -1,11 +1,24 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useOutletContext } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 const VanDetails = () => {
-  const { van } = useOutletContext();
+  // const { van } = useOutletContext();
 
-  console.log(van);
+  const [van, setVan] = useState({});
+  const { id } = useParams();
 
+  const fetchVans = async () => {
+    try {
+      const response = await axios.get(`/api/api/vans/details/${id}`);
+      setVan(response.data.data.van);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  useEffect(() => {
+    fetchVans();
+  }, [id]);
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="flex flex-wrap -mx-4">
