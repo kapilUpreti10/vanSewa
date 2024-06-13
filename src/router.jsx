@@ -32,7 +32,7 @@ const Router = createBrowserRouter([
         children: [
           {
             path: "",
-            // index:true,
+            // index: true,
             element: <DashHome />,
           },
           {

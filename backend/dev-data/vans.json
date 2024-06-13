@@ -1,51 +1,130 @@
 [
-    {
-      "id": "1",
-      "name": "Modest Explorer",
-      "price": 60,
-      "description": "The Modest Explorer is a van designed to get you out of the house and into nature. This beauty is equipped with solar panels, a composting toilet, a water tank and kitchenette. The idea is that you can pack up your home and escape for a weekend or even longer!",
-      "imageUrl": "https://assets.scrimba.com/advanced-react/react-router/modest-explorer.png",
-      "type": "simple"
-    },
-    {
-      "id": "2",
-      "name": "Beach Bum",
-      "price": 80,
-      "description": "Beach Bum is a van inspired by surfers and travelers. It was created to be a portable home away from home, but with some cool features in it you won't find in an ordinary camper.",
-      "imageUrl": "https://assets.scrimba.com/advanced-react/react-router/beach-bum.png",
-      "type": "rugged"
-    },
-    {
-      "id": "3",
-      "name": "Reliable Red",
-      "price": 100,
-      "description": "Reliable Red is a van that was made for travelling. The inside is comfortable and cozy, with plenty of space to stretch out in. There's a small kitchen, so you can cook if you need to. You'll feel like home as soon as you step out of it.",
-      "imageUrl": "https://assets.scrimba.com/advanced-react/react-router/reliable-red.png",
-      "type": "luxury"
-    },
-    {
-      "id": "4",
-      "name": "Dreamfinder",
-      "price": 65,
-      "description": "Dreamfinder is the perfect van to travel in and experience. With a ceiling height of 2.1m, you can stand up in this van and there is great head room. The floor is a beautiful glass-reinforced plastic (GRP) which is easy to clean and very hard wearing. A large rear window and large side windows make it really light inside and keep it well ventilated.",
-      "imageUrl": "https://assets.scrimba.com/advanced-react/react-router/dreamfinder.png",
-      "type": "simple"
-    },
-    {
-      "id": "5",
-      "name": "The Cruiser",
-      "price": 120,
-      "description": "The Cruiser is a van for those who love to travel in comfort and luxury. With its many windows, spacious interior and ample storage space, the Cruiser offers a beautiful view wherever you go.",
-      "imageUrl": "https://assets.scrimba.com/advanced-react/react-router/the-cruiser.png",
-      "type": "luxury"
-    },
-    {
-      "id": "6",
-      "name": "Green Wonder",
-      "price": 70,
-      "description": "With this van, you can take your travel life to the next level. The Green Wonder is a sustainable vehicle that's perfect for people who are looking for a stylish, eco-friendly mode of transport that can go anywhere.",
-      "imageUrl": "https://assets.scrimba.com/advanced-react/react-router/green-wonder.png",
-      "type": "rugged"
-    }
-  ]
-  
+  {
+    "id": "1",
+    "name": "Modest Explorer",
+    "price": 60,
+    "description": "The Modest Explorer is a van designed to get you out of the house and into nature. This beauty is equipped with solar panels, a composting toilet, a water tank, and a kitchenette. The idea is that you can pack up your home and escape for a weekend or even longer! Whether you're hiking in the mountains or camping by a serene lake, the Modest Explorer ensures you're always comfortable.",
+    "imageUrl": "https://assets.scrimba.com/advanced-react/react-router/modest-explorer.png",
+    "type": "simple"
+  },
+  {
+    "id": "2",
+    "name": "Beach Bum",
+    "price": 80,
+    "description": "Beach Bum is a van inspired by surfers and travelers. It was created to be a portable home away from home, but with some cool features in it you won't find in an ordinary camper. With surfboard racks, a beach shower, and ample storage for all your gear, it's perfect for those spontaneous beach getaways.",
+    "imageUrl": "https://assets.scrimba.com/advanced-react/react-router/beach-bum.png",
+    "type": "rugged"
+  },
+  {
+    "id": "3",
+    "name": "Reliable Red",
+    "price": 100,
+    "description": "Reliable Red is a van that was made for traveling. The inside is comfortable and cozy, with plenty of space to stretch out in. There's a small kitchen, so you can cook if you need to. You'll feel like home as soon as you step out of it. Ideal for long road trips, this van ensures a smooth ride and reliable performance.",
+    "imageUrl": "https://assets.scrimba.com/advanced-react/react-router/reliable-red.png",
+    "type": "luxury"
+  },
+  {
+    "id": "4",
+    "name": "Dreamfinder",
+    "price": 65,
+    "description": "Dreamfinder is the perfect van to travel in and experience. With a ceiling height of 2.1m, you can stand up in this van and there is great head room. The floor is a beautiful glass-reinforced plastic (GRP) which is easy to clean and very hard wearing. A large rear window and large side windows make it really light inside and keep it well ventilated. Perfect for stargazing or enjoying the views from the comfort of your van.",
+    "imageUrl": "https://assets.scrimba.com/advanced-react/react-router/dreamfinder.png",
+    "type": "simple"
+  },
+  {
+    "id": "5",
+    "name": "The Cruiser",
+    "price": 120,
+    "description": "The Cruiser is a van for those who love to travel in comfort and luxury. With its many windows, spacious interior, and ample storage space, the Cruiser offers a beautiful view wherever you go. The plush seating and state-of-the-art amenities make every journey an adventure in style.",
+    "imageUrl": "https://assets.scrimba.com/advanced-react/react-router/the-cruiser.png",
+    "type": "luxury"
+  },
+  {
+    "id": "6",
+    "name": "Green Wonder",
+    "price": 70,
+    "description": "With this van, you can take your travel life to the next level. The Green Wonder is a sustainable vehicle that's perfect for people who are looking for a stylish, eco-friendly mode of transport that can go anywhere. Solar panels and a hybrid engine make it ideal for the environmentally conscious traveler.",
+    "imageUrl": "https://assets.scrimba.com/advanced-react/react-router/green-wonder.png",
+    "type": "rugged"
+  },
+  {
+    "id": "7",
+    "name": "Mountain Majesty",
+    "price": 85,
+    "description": "The Mountain Majesty is designed for those who love the great outdoors. Equipped with all-terrain tires, a rugged suspension system, and a powerful engine, this van can take you to the most remote locations. Inside, you'll find a comfortable sleeping area, a small kitchenette, and plenty of storage for your gear.",
+    "imageUrl": "pic1.jpg",
+    "type": "rugged"
+  },
+  {
+    "id": "8",
+    "name": "Urban Explorer",
+    "price": 75,
+    "description": "The Urban Explorer is perfect for city adventurers. With a compact size and excellent fuel efficiency, it’s easy to navigate through busy streets. The interior is designed with modern comforts including Wi-Fi, a mini fridge, and an ergonomic workspace, making it ideal for digital nomads.",
+    "imageUrl": "pic2.jpg",
+    "type": "simple"
+  },
+  {
+    "id": "9",
+    "name": "Coastal Cruiser",
+    "price": 90,
+    "description": "The Coastal Cruiser combines the best of comfort and convenience. It features a spacious living area with panoramic windows, a fully equipped kitchen, and a luxurious sleeping space. Ideal for long coastal drives, this van ensures you never miss a sunset.",
+    "imageUrl": "pic3.jpg",
+    "type": "luxury"
+  },
+  {
+    "id": "10",
+    "name": "Desert Drifter",
+    "price": 65,
+    "description": "Designed for desert adventures, the Desert Drifter is equipped with sand tires, extra water storage, and an advanced cooling system. Inside, it offers a cozy retreat from the heat with air conditioning, a comfortable bed, and a compact kitchen area.",
+    "imageUrl": "pic4.jpg",
+    "type": "rugged"
+  },
+  {
+    "id": "11",
+    "name": "Forest Ranger",
+    "price": 70,
+    "description": "The Forest Ranger is perfect for woodland explorers. Its rugged build and four-wheel drive make it ideal for off-road trails. The interior is lined with natural wood, offering a rustic yet comfortable atmosphere with a small kitchenette and sleeping area.",
+    "imageUrl": "pic5.jpg",
+    "type": "simple"
+  },
+  {
+    "id": "12",
+    "name": "Snow Seeker",
+    "price": 95,
+    "description": "Built for winter adventures, the Snow Seeker features heated floors, insulated walls, and a powerful heating system. It also comes with snow tires and chains for safe travel in snowy conditions. Inside, you'll find a cozy living space with a small kitchen and a warm sleeping area.",
+    "imageUrl": "pic6.jpg",
+    "type": "rugged"
+  },
+  {
+    "id": "13",
+    "name": "Sunset Dreamer",
+    "price": 100,
+    "description": "The Sunset Dreamer is designed for those who love chasing sunsets. With its panoramic windows, you can enjoy stunning views from every angle. The interior is luxurious, with a fully equipped kitchen, a comfortable bed, and a spacious living area.",
+    "imageUrl": "pic7.jpg",
+    "type": "luxury"
+  },
+  {
+    "id": "14",
+    "name": "River Rover",
+    "price": 80,
+    "description": "Ideal for riverside camping, the River Rover is equipped with fishing gear storage, a small boat rack, and a compact kitchen. The interior is comfortable with a sleeping area that allows you to wake up to the sound of flowing water.",
+    "imageUrl": "pic8.jpg",
+    "type": "simple"
+  },
+  {
+    "id": "15",
+    "name": "Wildlife Wanderer",
+    "price": 90,
+    "description": "Perfect for wildlife enthusiasts, the Wildlife Wanderer features large windows for optimal viewing, a quiet engine to minimize disturbances, and ample storage for cameras and gear. The interior is designed for comfort with a small kitchen and a cozy sleeping area.",
+    "imageUrl": "pic9.jpg",
+    "type": "rugged"
+  },
+  {
+    "id": "16",
+    "name": "Starlight Seeker",
+    "price": 110,
+    "description": "The Starlight Seeker is equipped with a retractable roof for stargazing, comfortable seating, and a high-tech navigation system. The interior is luxurious with a spacious sleeping area, a fully equipped kitchen, and ambient lighting to enhance the stargazing experience.",
+    "imageUrl": "pic10.jpg",
+    "type": "luxury"
+  }
+]

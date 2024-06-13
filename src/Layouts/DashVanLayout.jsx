@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { IoMdArrowRoundBack } from "react-icons/io";
-import { Outlet, Link, useParams, useNavigate } from "react-router-dom";
+import { Outlet, NavLink, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const DashVanLayout = () => {
@@ -53,28 +53,56 @@ const DashVanLayout = () => {
           <div className="my-6 bg-white p-4 rounded-lg shadow-md">
             <ul className="flex gap-8 justify-center text-lg font-medium text-gray-600">
               <li>
-                <Link
+                <NavLink
                   to={`/dashboard/vans/${id}`}
                   className="hover:text-blue-500"
+                  style={({ isActive }) =>
+                    isActive
+                      ? {
+                          color: "green",
+                          fontWeight: "semi-bold",
+                          textDecoration: "underline",
+                        }
+                      : null
+                  }
+                  end={true}
                 >
                   Details
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   to={`/dashboard/vans/${id}/pricing`}
                   className="hover:text-blue-500"
+                  style={({ isActive }) =>
+                    isActive
+                      ? {
+                          color: "green",
+                          fontWeight: "semi-bold",
+                          textDecoration: "underline",
+                        }
+                      : null
+                  }
                 >
                   Pricing
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   to={`/dashboard/vans/${id}/photo`}
                   className="hover:text-blue-500"
+                  style={({ isActive }) =>
+                    isActive
+                      ? {
+                          color: "green",
+                          fontWeight: "semi-bold",
+                          textDecoration: "underline",
+                        }
+                      : null
+                  }
                 >
                   Photos
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>
