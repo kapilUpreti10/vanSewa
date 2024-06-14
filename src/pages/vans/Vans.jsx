@@ -5,6 +5,10 @@ import { Link, useSearchParams } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 import { GrPrevious, GrNext } from "react-icons/gr";
 
+export const loader = () => {
+  return <p>Loading data...</p>;
+};
+
 const Vans = () => {
   const [vans, setVans] = useState([]);
   const [search, setSearch] = useState("");

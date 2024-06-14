@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import fetchVans from "../../utils/fetchVans";
+import { useLoaderData } from "react-router-dom";
 
 function DashIncome() {
-  const [vans, setVans] = useState([]);
+  // const [vans, setVans] = useState([]);
+  // if we use setVans, we will get an error because we are using useLoaderData to fetch data so it will be in infinite loop
+  const vans = useLoaderData();
 
-  useEffect(() => {
-    const fetchVans = async () => {
-      try {
-        const response = await axios.get("/api/api/vans/overview");
-        if (response.data.status === "success") {
-          setVans(response.data.data.vans);
-        }
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    fetchVans();
-  }, []);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     // const data = await fetchVans();
+  //     // setVans(data);
+  //   };
+  //   fetchData();
+  // }, []);
+
   console.log("income vans is", vans);
 
   return (
