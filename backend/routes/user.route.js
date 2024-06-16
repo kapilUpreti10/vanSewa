@@ -11,4 +11,6 @@ router.route("/user/update/:userId").patch(verifyToken, updateUser);
 
 // or we can also run middleware seperately
 
+router.route("/getUser", verifyToken).get(getUser);
+
 export default router;

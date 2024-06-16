@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
+import axios from "axios";
+import { redirect, useNavigate } from "react-router-dom";
 
 const SignUpForm = () => {
   const [formData, setFormData] = useState({
@@ -15,11 +18,29 @@ const SignUpForm = () => {
       [name]: value,
     });
   };
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Add your form submission logic here
     console.log(formData);
+    const response = await axios.post("/api/api/auth/user/signup", formData);
+    if (response.data.status === "success") {
+      notify("success", "Sign Up Successful");
+      // Redirect to login page
+      navigate("/auth/login");
+    } else {
+      notify("error", "failed to sign up");
+    }
+  };
+
+  const notify = (status, message) => {
+    if (status === "success") {
+      toast.success(message);
+    }
+    if (status === "error") {
+      toast.error(message);
+    }
   };
 
   return (

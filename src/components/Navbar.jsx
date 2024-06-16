@@ -59,8 +59,17 @@ const Navbar = () => {
                 <NavLink
                   to="/vans"
                   className="text-gray-300 hover:text-white px-4 py-2"
+                  style={({ isActive }) => (isActive ? activeStyle : null)}
                 >
                   Vans
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/auth/signup"
+                  className="text-white  px-4 py-2 bg-blue-500 rounded-md hover:bg-blue-600"
+                >
+                  SignUp
                 </NavLink>
               </li>
             </ul>

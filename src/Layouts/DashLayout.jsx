@@ -9,7 +9,7 @@ const DashLayout = () => {
   };
   return (
     <div className="min-h-screen flex flex-col">
-      <div className="sticky top-20 z-10 bg-[#f9f9f9]">
+      <div className=" bg-[#f9f9f9]">
         <div className=" p-4 w-full mx-auto">
           <ul className="flex justify-center gap-10 ">
             <NavLink

@@ -7,13 +7,14 @@ import customError from "../utils/customErr.js";
 const { hashSync } = bcrypt;
 
 const getUser = catchAsync(async (req, res, next) => {
-  const users = await User.find();
+  console.log("verified user is", req.verifiedUser);
+  const user = await User.findById(req.verifiedUser._id).select("-password");
+  if (!user) {
+    return next(customError("User not found.", 404));
+  }
   res.status(200).json({
     status: "success",
-    results: users.length,
-    data: {
-      users,
-    },
+    user,
   });
 });
 

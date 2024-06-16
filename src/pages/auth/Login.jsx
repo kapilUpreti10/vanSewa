@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
@@ -25,10 +28,27 @@ const LoginForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your form submission logic here
-    console.log(formData);
+
+    const response = await axios.post("/api/api/auth/user/login", formData);
+    if (response.data.status === "success") {
+      notify("success", "Login Successful");
+      navigate("/dashboard");
+    } else {
+      notify("error", "failed to login");
+    }
+  };
+
+  const notify = (status, message) => {
+    if (status === "success") {
+      toast.success(message);
+    }
+    if (status === "error") {
+      toast.error(message);
+    }
   };
 
   return (

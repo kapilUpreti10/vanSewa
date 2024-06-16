@@ -5,6 +5,7 @@ import jwt from "jsonwebtoken";
 import User from "../models/user.model.js";
 const verifyToken = catchAsync(async (req, res, next) => {
   const token = req.cookies.jwt;
+  console.log("verify token is runned and token from browser is", token);
   if (!token) {
     return next(
       customError(404, "You are not logged in. Please login to update.")

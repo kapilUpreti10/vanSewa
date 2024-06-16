@@ -1,6 +1,8 @@
 import express from "express";
 const router = express.Router();
 
+import verifyToken from "../middlewares/verifyToken.js";
+
 import { getVans, getVan } from "../controllers/vans.controller.js";
 
 router.route("/overview").get(getVans);

@@ -16,16 +16,24 @@ import DashVanProfile from "./pages/Dashboard/DashVanProfile";
 import DashVanPricing from "./pages/Dashboard/DashVanPricing";
 import DashLayout from "./Layouts/DashLayout";
 
+// auth pages
+import LoginForm from "./pages/auth/Login";
+import SignUpForm from "./pages/auth/SignUp";
+
 // utils
 import Loader from "./utils/Loader";
 import Error from "./utils/Error";
+import GlobalErr from "./utils/GlobalErr";
+
+// private route
+import ProtectRoute from "./utils/privateRoutes/ProtectRoute";
 
 const Router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
-    errorElement: <Error />,
-    // this errorElement handles any error that occurs in MainLayout component
+    errorElement: <GlobalErr />,
+    // this errorElement handles any error that occurs in MainLayout component and its children
     children: [
       {
         path: "/",
@@ -33,7 +41,11 @@ const Router = createBrowserRouter([
       },
       {
         path: "/dashboard",
-        element: <DashLayout />,
+        element: (
+          <ProtectRoute errorElement={<GlobalErr />}>
+            <DashLayout />
+          </ProtectRoute>
+        ),
         children: [
           {
             path: "",
@@ -44,6 +56,7 @@ const Router = createBrowserRouter([
             path: "income",
             element: <DashIncome />,
             loader: Loader,
+            //errorElement: <GlobalErr />,
           },
           {
             path: "review",
@@ -81,6 +94,19 @@ const Router = createBrowserRouter([
       {
         path: "/vans/details/:id",
         element: <DetailPage />,
+      },
+      {
+        path: "/auth",
+        children: [
+          {
+            path: "signup",
+            element: <SignUpForm />,
+          },
+          {
+            path: "login",
+            element: <LoginForm />,
+          },
+        ],
       },
       {
         path: "*",

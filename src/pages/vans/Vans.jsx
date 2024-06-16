@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Error from "../../components/Error";
+import Error from "../../utils/Error";
 import { Link, useSearchParams } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 import { GrPrevious, GrNext } from "react-icons/gr";

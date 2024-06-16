@@ -9,7 +9,12 @@ const fetchVans = async () => {
       return response.data.data.vans;
     }
   } catch (err) {
-    throw new Error(err);
+    console.log(err.response.statusText);
+    throw {
+      status: err.response.status,
+      stautsText: err.response.statusText,
+      message: err.response.data.message,
+    };
   }
 };
 export default fetchVans;
