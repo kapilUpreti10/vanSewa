@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { IoMdMenu } from "react-icons/io";
+import { useAuth } from "../utils/privateRoutes/AuthProvider";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +14,7 @@ const Navbar = () => {
     fontWeight: "bold",
     textDecoration: "underline",
   };
-
+  const { user } = useAuth();
   return (
     <nav className="bg-blue-900 shadow-lg sticky top-0 z-10 h-18">
       <div className="container mx-auto px-6 py-4">
@@ -65,12 +66,21 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  to="/auth/signup"
-                  className="text-white  px-4 py-2 bg-blue-500 rounded-md hover:bg-blue-600"
-                >
-                  SignUp
-                </NavLink>
+                {user ? (
+                  <NavLink
+                    to="/auth/logout"
+                    className="text-white  px-4 py-2 bg-blue-500 rounded-md hover:bg-blue-600"
+                  >
+                    Logout
+                  </NavLink>
+                ) : (
+                  <NavLink
+                    to="/auth/signup"
+                    className="text-white  px-4 py-2 bg-blue-500 rounded-md hover:bg-blue-600"
+                  >
+                    SignUp
+                  </NavLink>
+                )}
               </li>
             </ul>
           </div>

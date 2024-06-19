@@ -19,6 +19,7 @@ import DashLayout from "./Layouts/DashLayout";
 // auth pages
 import LoginForm from "./pages/auth/Login";
 import SignUpForm from "./pages/auth/SignUp";
+import Logout from "./pages/auth/Logout";
 
 // utils
 import Loader from "./utils/Loader";
@@ -105,6 +106,10 @@ const Router = createBrowserRouter([
           {
             path: "login",
             element: <LoginForm />,
+          },
+          {
+            path: "logout",
+            element: <Logout />,
           },
         ],
       },

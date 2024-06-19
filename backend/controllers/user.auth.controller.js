@@ -6,6 +6,9 @@ import bcrypt from "bcryptjs";
 // create and send jwt token
 const cookieOptions = {
   httpOnly: true,
+  sameSite: "None",
+  secure: true,
+  path: "/",
 };
 const createToken = (email) => {
   return jwt.sign({ email }, process.env.JWT_SECRET_KEY, {
@@ -61,15 +64,10 @@ const login = catchAsync(async (req, res, next) => {
   // if everything is ok, send token to client
   sendToken(userValidate, 200, res);
 });
-
-const getAllUsers = catchAsync(async (req, res, next) => {
-  const users = await User.find();
-  res.status(200).json({
-    status: "success",
-    results: users.length,
-    data: {
-      users,
-    },
-  });
+const logout = catchAsync((req, res) => {
+  res.clearCookie("jwt", cookieOptions); // Clear the jwt cookie
+  res
+    .status(200)
+    .json({ status: "success", message: "user logout successfully" });
 });
-export { getAllUsers, signup, login };
+export { logout, signup, login };
