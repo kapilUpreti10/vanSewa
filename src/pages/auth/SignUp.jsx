@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
-import { redirect, useNavigate } from "react-router-dom";
+import { redirect, useNavigate, Link } from "react-router-dom";
 
 const SignUpForm = () => {
   const [formData, setFormData] = useState({
@@ -109,6 +109,12 @@ const SignUpForm = () => {
         >
           Sign Up
         </button>
+        <p className="mt-3 ">
+          Already have a account?
+          <Link to="/auth/login" className="underline pl-3">
+            Login
+          </Link>
+        </p>
       </form>
     </div>
   );

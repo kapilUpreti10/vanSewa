@@ -8,7 +8,7 @@ const { hashSync } = bcrypt;
 
 const getUser = catchAsync(async (req, res, next) => {
   console.log("verified user is", req.verifiedUser);
-  const user = await User.findById(req.verifiedUser._id).select("-password");
+  const user = await User.findById(req.verifiedUser?._id).select("-password");
   if (!user) {
     return next(customError("User not found.", 404));
   }
@@ -55,3 +55,4 @@ const updateUser = catchAsync(async (req, res, next) => {
 });
 
 export { getUser, updateUser };
+console.log;

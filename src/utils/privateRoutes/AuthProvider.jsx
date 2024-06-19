@@ -12,9 +12,8 @@ export const AuthProvider = ({ children }) => {
     const checkAuth = async () => {
       try {
         const response = await axios.get("/api/api/users/getUser");
-        console.log("hello mia");
-        console.log("hello world", response.data.data._id);
-        setUser(response.data.data._id);
+        console.log(response);
+        setUser(response.data.user._id);
       } catch (error) {
         console.log(error);
       } finally {
@@ -24,8 +23,6 @@ export const AuthProvider = ({ children }) => {
 
     checkAuth();
   }, []);
-
-  console.log("user in authprovider is", user);
 
   return (
     <AuthContext.Provider value={{ user, loading }}>

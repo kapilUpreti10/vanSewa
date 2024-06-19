@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
@@ -109,6 +109,12 @@ const LoginForm = () => {
         >
           Sign In
         </button>
+        <p className="mt-3">
+          Dont have a account?
+          <Link to="/auth/signup" className="underline pl-2">
+            Signup
+          </Link>
+        </p>
       </form>
     </div>
   );
